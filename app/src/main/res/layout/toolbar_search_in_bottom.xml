@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:fitsSystemWindows="true">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="搜索内容" />
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="搜索"
+            app:navigationIcon="@mipmap/back_circle"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/search_toolbar"
+            android:background="@color/colorPrimary"
+            android:padding="6dp">
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawablePadding="22dp"-->
+<!--                android:drawableRight="@mipmap/toolbar_search"-->
+<!--                android:gravity="left|center"-->
+<!--                android:hint="请输入搜索内容"-->
+<!--                android:padding="10dp"-->
+<!--                android:maxLines="3"-->
+<!--                android:textColorHint="@color/white" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ProgressBar
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    style="@android:style/Widget.ProgressBar.Horizontal"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/startbbb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始" />
+                    <Button
+                        android:id="@+id/stopaaa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="停止"/>
+                </LinearLayout>
+                <ProgressBar
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    style="@android:style/Widget.ProgressBar.Horizontal"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress2"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/startnew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始" />
+                    <Button
+                        android:id="@+id/stopnew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="停止"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/news"
+        android:icon="@mipmap/mine"
+        android:title="首页"
+        />
+    <item
+        android:id="@+id/class_pic"
+        android:icon="@mipmap/sort"
+        android:title="分类"
+        />
+    <item
+        android:id="@+id/mine"
+        android:icon="@mipmap/notes"
+        android:title="笔记"
+        />
+
+</menu>

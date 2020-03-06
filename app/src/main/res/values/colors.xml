@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#81dbeb</color>
+    <color name="colorPrimaryDark">#8fcbe3</color>
+    <color name="colorAccent">#e2d7db</color>
+    <color name="colorBottomText">#e2d7db</color>
+    <color name="colorBottomIcon">#71d9f1</color>
+    <color name="colorBottomBG">#98284bbc</color>
+    <color name="colorNormalBG">#f2f2f2</color>
+    <color name="colorToolbar">#639ad4</color>
+    <color name="colorLoginFindPass">#306eff</color>
+    <color name="selector">#cdcdcd</color>
+    <color name="color_tab_bg">#e7e3e3</color>
+    <color name="color_login_bg">#e7e3e3</color>
+    <color name="color_button_bg">#ffffff</color>
+    <color name="color_button_font_bg">#000000</color>
+    <color name="color_line">#aeaeae</color>
+    <color name="color_class">#f1fffd</color>
+    <color name="color_class_timetable_number">#7a7a7a</color>
+    <color name="cook_book_font">#252525</color>
+    <color name="colorTagVideo">#22c928</color>
+    <color name="white">#ffffff</color>
+    <color name="login_blue">#1fbaf3</color>
+    <color name="login_status_bar">#c9c9c9</color>
+    <color name="login_background">#ecedf1</color>
+    <color name="item_video_date_text_color">#a7a7a7</color>
+    <color name="useful_background">#f1fffd</color>
+    <color name="color_gray">#a7a7a7</color>
+    <color name="toolbar_blue">#74c3e1</color>
+</resources>

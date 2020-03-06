@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+        <item name="colorPrimary">@color/colorPrimary</item>              <!-- 状态栏 -->
+        <item name="colorPrimaryDark">@color/colorPrimary</item>          <!-- toolbar -->
+        <item name="colorAccent">@color/colorAccent</item>                <!-- 常用控件默认背景色 -->
+        <item name="android:windowTranslucentStatus">true</item>          <!-- 适用4.4到5.0的系统-->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- 状态栏 无用-->
+    <style name="StatusTheme" >
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <!-- activity theme. -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- ToolBar样式.-->
+    <style name="toolbar_white_theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- 改变返回键、标题、菜单栏颜色.-->
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+</resources>
