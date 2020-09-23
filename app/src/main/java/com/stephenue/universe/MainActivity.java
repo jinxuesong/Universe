@@ -15,11 +15,18 @@ import butterknife.BindView;
 import android.Manifest;
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -41,12 +48,14 @@ import com.stephenue.universe.db.DatabaseHelper;
 import com.stephenue.universe.fragment.HomeFragment;
 import com.stephenue.universe.fragment.NotesFragment;
 import com.stephenue.universe.fragment.SortFragment;
+import com.stephenue.universe.utils.SharedPerfHelper;
 import com.yzq.zxinglibrary.android.CaptureActivity;
 import com.yzq.zxinglibrary.common.Constant;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URLDecoder;
 import java.text.DecimalFormat;
@@ -83,61 +92,6 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener, 
         //++++++++++++++++++++++++++++++++++++++++
         DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext(), "test_note");
         db = dbHelper.getWritableDatabase();
-//        File sd = Environment.getExternalStorageDirectory();
-//        String ppp = Environment.getExternalStorageDirectory().getPath();
-//        System.out.println(ppp);
-//        File rootFile = new File(ppp + "/AAA");
-//        Toast.makeText(getApplicationContext(), "111", Toast.LENGTH_SHORT).show();
-//        if (!rootFile.exists()){
-//            boolean aaa = rootFile.mkdirs();
-//            Toast.makeText(getApplicationContext(), String.valueOf(aaa), Toast.LENGTH_SHORT).show();
-//
-//        }
-        File sd = Environment.getExternalStorageDirectory();
-        File rootFile = new File(sd, "/Pictures/Universe");
-        if (!rootFile.exists()){
-            rootFile.mkdirs();
-        }
-        String old = "/mnt/sdcard/Android/data/com.tni.order/files/TNI_dev/1080/data/tni/我的名片.png";
-        String anew = "/mnt/sdcard/DCIM/我的名片.png";
-        boolean aaa = copyFile(old, anew);
-        System.out.println(aaa);
-    }
-    public boolean copyFile(String oldPath$Name, String newPath$Name) {
-        try {
-            File oldFile = new File(oldPath$Name);
-            if (!oldFile.exists()) {
-                Log.e("--Method--", "copyFile:  oldFile not exist.");
-                return false;
-            } else if (!oldFile.isFile()) {
-                Log.e("--Method--", "copyFile:  oldFile not file.");
-                return false;
-            } else if (!oldFile.canRead()) {
-                Log.e("--Method--", "copyFile:  oldFile cannot read.");
-                return false;
-            }
-
-        /* 如果不需要打log，可以使用下面的语句
-        if (!oldFile.exists() || !oldFile.isFile() || !oldFile.canRead()) {
-            return false;
-        }
-        */
-
-            FileInputStream fileInputStream = new FileInputStream(oldPath$Name);    //读入原文件
-            FileOutputStream fileOutputStream = new FileOutputStream(newPath$Name);
-            byte[] buffer = new byte[1024];
-            int byteRead;
-            while ((byteRead = fileInputStream.read(buffer)) != -1) {
-                fileOutputStream.write(buffer, 0, byteRead);
-            }
-            fileInputStream.close();
-            fileOutputStream.flush();
-            fileOutputStream.close();
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
     @Override
@@ -243,6 +197,9 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener, 
             case R.id.menu_search_view:
                 Intent intent=new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(intent);
+//                Intent intent = new Intent();
+//                intent.setAction("com.stephenue.universe.abcdefg");
+//                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
