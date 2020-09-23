@@ -23,11 +23,11 @@
     <item android:title="子菜单">
         <menu>
             <item
-                android:id="@+id/item_1"
+                android:id="@+id/about"
                 android:icon="@mipmap/about"
                 android:title="关于" />
             <item
-                android:id="@+id/item_2"
+                android:id="@+id/color_app"
                 android:icon="@mipmap/theme"
                 android:title="主题皮肤" />
 

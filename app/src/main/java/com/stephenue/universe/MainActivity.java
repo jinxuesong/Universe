@@ -89,7 +89,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //++++++++++++++++++++++++++++++++++++++++
+        //初始化本地数据库
         DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext(), "test_note");
         db = dbHelper.getWritableDatabase();
     }
@@ -139,6 +139,10 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener, 
                     }
                     Toast.makeText(getApplicationContext(),textview_data,Toast.LENGTH_LONG).show();
                 } else if (item.getItemId() == R.id.collect) {
+
+                } else if (item.getItemId() == R.id.about) {
+
+                } else if (item.getItemId() == R.id.color_app) {
 
                 }
                 return true;
